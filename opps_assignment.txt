@@ -1,0 +1,161 @@
+#include <iostream>
+ 
+using namespace std;
+
+// Base class mobile
+class Mobile {
+   public:
+      void phoneBook() 
+      {
+        cout <<" Check PhoneBook"<< endl;
+      }
+      void Gmail()
+      {
+        cout <<" Check Gmail"<< endl;
+      }
+       void YoueTube() 
+       {
+         cout <<" Check YoueTube"<< endl;
+       }
+       
+      
+   protected:
+      
+      int campix;
+      string simcard;
+      
+      
+      
+};
+
+
+// Derived class
+class Samsung: public Mobile
+{
+   public:
+
+   Samsung()
+   {
+     campix=12;
+     simcard="single";
+   }
+ 
+        void Cam()
+      {
+        cout <<" Camera Pixel = "<<campix<< endl;
+      }
+      void Sim() {
+         cout <<simcard<<" Sim "<< endl; 
+      }
+};
+class MI: public Mobile
+{
+   public:
+   string internet;
+   MI()
+   {
+     campix =13;
+     simcard="dual";
+     internet="3G";
+     
+   }
+     void Cam()
+      {
+        cout <<" Camera Pixel = "<<campix<< endl;
+      }
+   void Sim() {
+         cout <<simcard<<" Sim "<< endl; 
+      }
+      void Internet() 
+      {
+         cout <<"Internet connectoin is"<<internet<< endl; 
+      }
+};
+
+int main(void) {
+   Samsung sam;
+   MI mi;
+   int option;
+   char op;
+   
+ 
+  
+cout << "Select Any Mobile: "  << endl;
+ cout << "1. Samsung Mobile "  << endl; 
+ cout << "2. MI Mobile "  << endl; 
+ cout << "3. Exit "  << endl; 
+ cout << "Enter Your Choice***: "  << endl;
+ cin >> option;
+
+ switch(option)
+ {
+   while(true){
+     case 1: cout<<"Select Any Samsung Feature\n"<<"A.camera\n"<<"B.PhoneBook\n"<<"C.YoueTube\n"<<"D.Simcard\n"<<"E.Exit\n"<<"Enter your Choice\n\n\n"<<endl;
+      
+             cin>>op;
+          
+             switch(op)
+             {
+                 case 'a':
+                 case 'A':
+                          sam.Cam();
+                           break;
+                 case 'b':
+                 case 'B':
+                           sam.phoneBook();
+                           break;                           
+
+                 case 'c':                           
+
+                 case 'C':
+                           sam.YoueTube();
+                           break;
+                 case 'd':
+                 case 'D':
+                           sam.Sim();
+                           break;
+                 case 'e':
+                 case 'E':exit(0);
+                           break;
+                        
+             }
+           
+ }                
+       break;    
+       while(true){ 
+    case 2: 
+    cout<<"Select Any MI Feature\n"<<"A.camera\n"<<"B.PhoneBook\n"<<"C.YoueTube\n"<<"D.Simcard\n"<<"E.Exit\n"<<"Enter your Choice\n"<<endl;
+             cin>>op;
+             
+             switch(op)
+             {
+                 case 'a':
+                 case 'A':
+                          mi.Cam();
+                           break;
+                 case 'b':
+                 case 'B':
+                           mi.phoneBook();
+                           break;
+                 case 'c':
+                 case 'C':
+                           mi.YoueTube();
+                           break;
+                case 'd':
+                 case 'D':
+                           mi.Sim();
+                           break;
+                  case 'e':
+                  case 'E':exit(0);
+                          break;      
+             }
+              
+              
+
+ }break;
+ }
+   
+   
+
+   return 0;
+}
